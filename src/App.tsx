@@ -9,6 +9,23 @@ import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 
+// Asset Image Imports
+import advocateAssociationImage from './assets/images/advocate_association_portal_1791946116948.jpg';
+import heroWorkspaceImage from './assets/images/hero_sajith_workspace_1791904983374.jpg';
+import pharmaGstInvoiceImage from './assets/images/pharma_gst_invoice_1791945139723.jpg';
+import projectGstInvoiceImage from './assets/images/project_gst_invoice_1791904984262.jpg';
+import keralaExplorerImage from './assets/images/project_kerala_explorer_1791904984601.jpg';
+import mistyMountainImage from './assets/images/project_misty_mountain_1791904984176.jpg';
+
+export const portfolioImages = {
+  hero: heroWorkspaceImage,
+  advocateAssociation: advocateAssociationImage,
+  pharmaGstInvoice: pharmaGstInvoiceImage,
+  projectGstInvoice: projectGstInvoiceImage,
+  keralaExplorer: keralaExplorerImage,
+  mistyMountain: mistyMountainImage,
+};
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -26,10 +43,18 @@ export default function App() {
 
         {/* Main Content Sections */}
         <main id="main-content" className="flex-1">
-          <Hero />
+          <Hero heroImage={heroWorkspaceImage} />
           <About />
           <Skills />
-          <Projects />
+          <Projects
+            projectImages={{
+              'proj-gst-invoice': pharmaGstInvoiceImage,
+              'proj-kerala-explorer': keralaExplorerImage,
+              'proj-misty-mountain': mistyMountainImage,
+              'proj-advocate-association': advocateAssociationImage,
+              'proj-tradingview-chart': projectGstInvoiceImage,
+            }}
+          />
           <Services />
           <Contact />
         </main>

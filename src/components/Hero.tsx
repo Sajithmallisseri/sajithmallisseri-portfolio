@@ -1,7 +1,12 @@
 import React from 'react';
 import { ArrowDown, Code2, Layers, Briefcase, FileText } from 'lucide-react';
+import heroWorkspaceImage from '../assets/images/hero_sajith_workspace_1791904983374.jpg';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  heroImage?: string;
+}
+
+export const Hero: React.FC<HeroProps> = ({ heroImage = heroWorkspaceImage }) => {
   return (
     <section id="home" className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden">
       {/* Subtle background ambient mesh */}
@@ -86,7 +91,7 @@ export const Hero: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-800 bg-slate-900 shadow-xl group">
               <img
-                src="/src/assets/images/hero_sajith_workspace_1791904983374.jpg"
+                src={heroImage}
                 alt="Sajith Mallisseri developer workstation with clean code and interface setup"
                 referrerPolicy="no-referrer"
                 className="w-full h-80 sm:h-96 lg:h-[420px] object-cover object-center transition-transform duration-500 group-hover:scale-105"

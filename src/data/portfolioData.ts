@@ -1,4 +1,9 @@
 import { Skill, Project, ServiceItem } from '../types/portfolio';
+import advocateAssociationImage from '../assets/images/advocate_association_portal_1791946116948.jpg';
+import pharmaGstInvoiceImage from '../assets/images/pharma_gst_invoice_1791945139723.jpg';
+import projectGstInvoiceImage from '../assets/images/project_gst_invoice_1791904984262.jpg';
+import keralaExplorerImage from '../assets/images/project_kerala_explorer_1791904984601.jpg';
+import mistyMountainImage from '../assets/images/project_misty_mountain_1791904984176.jpg';
 
 export const INITIAL_SKILLS: Skill[] = [
   {
@@ -110,7 +115,7 @@ export const INITIAL_PROJECTS: Project[] = [
     category: 'Business and Commercial Billing',
     status: 'Client Deployed',
     isWorkInProgress: false,
-    image: '/src/assets/images/pharma_gst_invoice_1791945139723.jpg',
+    image: pharmaGstInvoiceImage,
     description:
       'A comprehensive commercial billing software deployed for pharmaceutical distribution (Goa Pharmaceuticals, Calicut, Kerala) and hosted on PythonAnywhere [cloud web hosting service]. This software is made with React.js API, Django, Python and Database is SQLite. It handles complete enterprise inventory and taxation workflows—from intra-state (CGST+SGST) and inter-state (IGST) tax calculation to batch tracking, stock ledgers, and one-click invoice printing.',
     keyFeatures: [
@@ -135,7 +140,7 @@ export const INITIAL_PROJECTS: Project[] = [
     category: 'Travel and AI',
     status: 'Work in Progress',
     isWorkInProgress: true,
-    image: '/src/assets/images/project_kerala_explorer_1791904984601.jpg',
+    image: keralaExplorerImage,
     description:
       'A smart travel companion designed to help visitors explore Kerala’s destinations—from serene Alleppey backwaters and Munnar tea hills to historic Fort Kochi. Features itinerary customization, local seasonal tips, and cultural highlights.',
     keyFeatures: [
@@ -157,7 +162,7 @@ export const INITIAL_PROJECTS: Project[] = [
     category: 'Hospitality and Web',
     status: 'Live Preview',
     isWorkInProgress: false,
-    image: '/src/assets/images/project_misty_mountain_1791904984176.jpg',
+    image: mistyMountainImage,
     description:
       'A serene web presence crafted for an eco-luxury hill retreat in Munnar, Kerala. Features atmospheric visual layouts, cottage availability showcases, dining menus, and an intuitive direct reservation inquiry pipeline.',
     keyFeatures: [
@@ -179,7 +184,7 @@ export const INITIAL_PROJECTS: Project[] = [
     category: 'Legal and Web',
     status: 'Active',
     isWorkInProgress: false,
-    image: '/src/assets/images/advocate_association_portal_1791946116948.jpg',
+    image: advocateAssociationImage,
     description:
       'A dedicated web portal prepared last week for a professional legal practice and advocate association. Built to streamline bar association operations, this platform centralizes member advocate profiles, daily court cause list schedules, official association legal circulars, and client consultation inquiry management.',
     keyFeatures: [
@@ -203,7 +208,7 @@ export const INITIAL_PROJECTS: Project[] = [
     category: 'FinTech and TradingView',
     status: 'Active',
     isWorkInProgress: false,
-    image: '/src/assets/images/pinescript_tradingview_chart_1791949932412.jpg',
+    image: projectGstInvoiceImage,
     description:
       'I developed a Technical and Fundamental Trading view Chart in PineScript Programming language. This project provides visual charts along with technical and functional tables for stock market analysis. Engineered in TradingView’s PineScript programming language, it analyzes stock trends using automated buy and sell signal triggers, moving average confluences, and balance sheet financial metrics.',
     keyFeatures: [

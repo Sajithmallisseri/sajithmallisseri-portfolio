@@ -5,20 +5,38 @@ import { INITIAL_PROJECTS } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 import { EditProjectModal } from './EditProjectModal';
 
-const PROJECTS_STORAGE_KEY = 'sajith_portfolio_projects_v11';
+const PROJECTS_STORAGE_KEY = 'sajith_portfolio_projects_v12';
 
-export const Projects: React.FC = () => {
+export interface ProjectsProps {
+  projectImages?: Record<string, string>;
+}
+
+export const Projects: React.FC<ProjectsProps> = ({ projectImages }) => {
   const [projects, setProjects] = useState<Project[]>(() => {
     try {
       const saved = localStorage.getItem(PROJECTS_STORAGE_KEY);
       if (saved) {
-        return JSON.parse(saved);
+        const parsed: Project[] = JSON.parse(saved);
+        return parsed.map((p) => {
+          const defaultProject = INITIAL_PROJECTS.find((init) => init.id === p.id);
+          if (defaultProject && (p.image?.startsWith('/src/assets/images') || !p.image)) {
+            return { ...p, image: defaultProject.image };
+          }
+          return p;
+        });
       }
     } catch {
       // fallback
     }
     return INITIAL_PROJECTS;
   });
+
+  const getProjectImage = (project: Project): string => {
+    if (projectImages && projectImages[project.id]) {
+      return projectImages[project.id];
+    }
+    return project.image;
+  };
 
   const [activeFilter, setActiveFilter] = useState('All');
   const [activeProjectForView, setActiveProjectForView] = useState<Project | null>(null);
@@ -114,7 +132,7 @@ export const Projects: React.FC = () => {
               {/* Media Thumbnail Container */}
               <div className="relative aspect-16/9 w-full bg-slate-900 overflow-hidden">
                 <img
-                  src={project.image}
+                  src={getProjectImage(project)}
                   alt={project.title}
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
@@ -246,7 +264,10 @@ export const Projects: React.FC = () => {
       {/* Project Detail Modal */}
       {activeProjectForView && (
         <ProjectModal
-          project={activeProjectForView}
+          project={{
+            ...activeProjectForView,
+            image: getProjectImage(activeProjectForView),
+          }}
           onClose={() => setActiveProjectForView(null)}
           onEdit={(proj) => {
             setActiveProjectForView(null);
