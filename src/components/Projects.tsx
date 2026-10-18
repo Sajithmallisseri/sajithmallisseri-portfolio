@@ -84,7 +84,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projectImages }) => {
               <span>Software Applications and Web Projects</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-black dark:text-white [text-wrap:balance]">
-              Practical software engineered for real-world impact.
+              Practical software built for real-world impact.
             </h2>
             <p className="text-base text-slate-600 dark:text-slate-300">
               Explore specialized billing systems, intelligent discovery tools, and responsive digital web experiences. Click any project for architecture insights.
